@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Contact Us</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <!-- font-awesome CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <!-- link of css -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- font -->
+  <link href="https://fonts.googleapis.com/css?family=Unna&display=swap" rel="stylesheet">
+  <script>
+    $(document).ready(function () {
+      $("#nav-bar").load("header.html");
+      $("#footer").load("footer.html");
+    });
+
+    $("ul.navbar-nav li").each(function () {
+      $(this).on("click", function () {
+        $("#nav-bar").load($(this).attr("data-page") + ".html");
+      });
+    });
+  </script>
+</head>
+
+<body>
+  <header id="nav-bar">
+
+  </header>
+  <!-- Section: Contact v.1 -->
+  <section class="my-3">
+    <div class="Subheading">
+      <!-- Section heading -->
+      <h2 class="h2-responsive font-weight-bold text-left my-3">Contact us</h2>
+      <hr>
+    </div>
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-lg-5 mb-lg-0 mb-4">
+
+        <!-- Form with header -->
+        <div class="card">
+          <div class="card-body">
+            <!-- Header -->
+            <div class="form-header blue accent-1">
+              <h3 class="mt-2"><i class="fa fa-envelope"></i> Write to us:</h3>
+            </div>
+            <!-- Body -->
+            <div class="md-form">
+              <i class="fa fa-user prefix grey-text"></i>
+              <input type="text" id="form-name" class="form-control">
+              <label for="form-name">Your name</label>
+            </div>
+            <div class="md-form">
+              <i class="fa fa-envelope prefix grey-text"></i>
+              <input type="text" id="form-email" class="form-control">
+              <label for="form-email">Your email</label>
+            </div>
+            <div class="md-form">
+              <i class="fa fa-tag prefix grey-text"></i>
+              <input type="text" id="form-Subject" class="form-control">
+              <label for="form-Subject">Subject</label>
+            </div>
+            <div class="md-form">
+              <i class="fa fa-pencil prefix grey-text" aria-hidden="true"></i>
+              <textarea id="form-text" class="form-control md-textarea" rows="3"></textarea>
+              <label for="form-text">Send message</label>
+            </div>
+            <div class="text-center">
+              <button class="btn btn-light-blue">Submit</button>
+            </div>
+          </div>
+        </div>
+        <!-- Form with header -->
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-lg-7">
+
+        <!--Google map-->
+        <div id="map-container-section" class="z-depth-1-half map-container-section mb-4" style="height: 400px">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2542.6735955616805!2d-104.62258458446405!3d50.409920379469746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x531ea0b112fa136f%3A0xb57c5bf764d8a03a!2s2755%2031%20Ave%2C%20Regina%2C%20SK%20S4S%202R3!5e0!3m2!1sen!2sca!4v1571723021417!5m2!1sen!2sca"
+            frameborder="0" allowfullscreen=""></iframe>
+        </div>
+        <!-- Buttons-->
+        <div class="row text-center">
+          <div class="col-md-4">
+            <a class="btn-floating blue accent-1">
+              <i class="fa fa-map-marker"></i>
+            </a>
+            <p>2755, 31st Avenue</p>
+            <p class="mb-md-0">Regina, SK, Canada</p>
+          </div>
+          <div class="col-md-4">
+            <a class="btn-floating blue accent-1">
+              <i class="fa fa-phone"></i>
+            </a>
+            <p>1 (306) 526-0000</p>
+            <p class="mb-md-0">Mon - Fri, 8:00-22:00</p>
+          </div>
+          <div class="col-md-4">
+            <a class="btn-floating blue accent-1">
+              <i class="fa fa-envelope"></i>
+            </a>
+            <p>Sweta@fakemail.com</p>
+            <p class="mb-0">info@gmail.com</p>
+          </div>
+        </div>
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </section>
+  <!-- Section: Contact v.1 -->
+  <!-- Footer -->
+  <footer id="footer">
+
+  </footer>
+
+</body>
+
+</html>
