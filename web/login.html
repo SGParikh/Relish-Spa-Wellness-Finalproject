@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Login/Register</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <!-- font-awesome CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- link of css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- font -->
+    <link href="https://fonts.googleapis.com/css?family=Unna&display=swap" rel="stylesheet">
+    <script>
+        $(document).ready(function () {
+            $("#nav-bar").load("header.html");
+            $("#footer").load("footer.html");
+        });
+
+        $("ul.navbar-nav li").each(function () {
+            $(this).on("click", function () {
+                $("#nav-bar").load($(this).attr("data-page") + ".html");
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <header id="nav-bar">
+
+    </header>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mainform">
+                    <div class="headinglogin">
+                        <h2>Registration</h2>
+                    </div>
+                    <form class="Registration-form form" action="#" method="post" role="form">
+
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md">
+                                    <label for="firstName" class="control-label">First Name</label>
+                                    <div>
+                                        <input type="text" id="firstName" placeholder="First Name" class="form-control"
+                                            autofocus>
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <label for="lastName" class="control-label">Last Name</label>
+                                    <div>
+                                        <input type="text" id="lastName" placeholder="Last Name" class="form-control"
+                                            autofocus>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md">
+                                    <label for="email" class="control-label">Email* </label>
+                                    <div>
+                                        <input type="email" id="email" placeholder="Email" class="form-control"
+                                            name="email">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md">
+                                    <label for="password" class="control-label">Password*</label>
+                                    <div>
+                                        <input type="password" id="password" placeholder="Password"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <label for="password" class="control-label">Confirm Password*</label>
+                                    <div>
+                                        <input type="password" id="password" placeholder="Password"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md">
+                                    <label for="birthDate" class="control-label">Date of Birth*</label>
+                                    <div>
+                                        <input type="date" id="birthDate" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-md">
+                                    <label for="phoneNumber" class="control-label">Phone number </label>
+                                    <div>
+                                        <input type="phoneNumber" id="phoneNumber" placeholder="Phone number"
+                                            class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-sm-3">Gender</label>
+                            <div class="col-sm-12">
+                                        <label class="radio-inline">
+                                            <input type="radio" id="Gender" value="Female"> <label for="Gender" class="control-label"> Female </label>
+                                        </label>
+                                        <label class="radio-inline"></label>
+                                        <input type="radio" id="Gender" value="Male"><label for="Gender" class="control-label"> Male </label>
+                                    </label>
+                            </div>
+                        </div> <!-- /.form-group -->
+                        <button type="submit" class="btn btn-primary btn-block btnform" style="border-radius: 5px;">Register</button>
+                    </form> <!-- /form -->
+                </div>
+                <div class="col-md-1">
+                </div>
+                <div class="col-md-5 mainform">
+                    <div class="headinglogin">
+                        <h2>
+                            Login
+                        </h2>
+                    </div>
+                    <form class="login-form form" action="#" method="post">
+                        <div class="form-group">
+                            <div class="row">
+
+                                <div class="col-md form-field form-field--input form-field--inputEmail">
+                                    <label for="inputEmail" class="control-label">Email address</label>
+                                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address"
+                                        required="" autofocus></div>
+
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+
+                                <div class="col-md form-field form-field--input form-field--inputPassword">
+                                    <label for="inputPassword" class="control-label">Password</label>
+                                    <input type="password" id="inputPassword" class="form-control"
+                                        placeholder="Password" required=""></div>
+
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md checkbox" style="text-align: center;">
+                                    <label>
+                                        <input type="checkbox" value="remember-me"> Remember me
+                                    </label>&nbsp;&nbsp;
+                                    <a class="forgot-password" href="forgotpwd.html">Forgot your
+                                        password?</a>
+                                </div>
+                            </div>
+
+                        </div>
+                            <button class="btn btn-lg btn-primary btn-block btnform" type="submit" style="border-radius: 5px;">Sign in</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer id="footer">
+
+    </footer>
+
+</body>
+
+</html>
