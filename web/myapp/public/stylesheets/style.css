@@ -6,6 +6,7 @@ body {
   line-height: 20px;
   position: relative;
   background-color:#f4f4f4;
+  /* background-image: url("/images/back1.jpg"); */
   padding: 0;
   margin: 0;
   overflow: visible;
@@ -482,7 +483,7 @@ a.waves-effect, a.waves-light {
 }
 #jssor_1{
   position:relative;
-  margin:5 auto;
+  margin:5px 130px;
   top:5px;
   left:5px;
   padding-left: 10px;

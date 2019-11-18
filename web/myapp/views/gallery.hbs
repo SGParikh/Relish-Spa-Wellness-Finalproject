@@ -1,7 +1,7 @@
 <section class="my-3 gallery">
         <div class="Subheading">
             <!-- Section heading -->
-            <h2 class="h2-responsive font-weight-bold text-left my-3">Gallery</h2>
+            <h2 class="h2-responsive font-weight-bold text-left my-3">{{heading}}</h2>
             <hr>
         </div>
         <!-- #region Jssor Slider Begin -->
@@ -216,58 +216,13 @@
             </div>
             <div data-u="slides"
                 style="cursor:default;position:relative;top:0px;left:240px;width:720px;height:480px;overflow:hidden;">
+                {{# each Galleries}}
                 <div>
-                    <img data-u="image" src="/images/gallery/Arrival_Lounge1.jpg" />
-                    <img data-u="thumb" src="/images/gallery/Arrival_Lounge1.jpg" />
+                    <img data-u="image" src="{{this.imagePath}}" alt="{{this.title}}" title="{{this.title}}"/>
+                    <img data-u="thumb" src="{{this.imagePath}}" title="{{this.title}}"/>
                 </div>
-                <div>
-                    <img data-u="image" src="/images/gallery/Arrival-lounge.jpg" />
-                    <img data-u="thumb" src="/images/gallery/Arrival-lounge.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="/images/gallery/room1.jpg" />
-                    <img data-u="thumb" src="/images/gallery/room1.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="/images/gallery/rooms.jpg" />
-                    <img data-u="thumb" src="/images/gallery/rooms.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="/images/gallery/Couples_Treatment_Room.jpg" />
-                    <img data-u="thumb" src="/images/gallery/Couples_Treatment_Room.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="/images/gallery/foot-care.jpg" />
-                    <img data-u="thumb" src="/images/gallery/foot-care.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="/images/gallery/hot-tub.jpg" />
-                    <img data-u="thumb" src="/images/gallery/hot-tub.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="/images/gallery/Relaxation-lounge.jpg" />
-                    <img data-u="thumb" src="/images/gallery/Relaxation-lounge.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="/images/gallery/Steam_Room.jpg" />
-                    <img data-u="thumb" src="/images/gallery/Steam_Room.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="/images/6.jpg" />
-                    <img data-u="thumb" src="/images/6.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="/images/6.jpg" />
-                    <img data-u="thumb" src="/images/6.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="/images/6.jpg" />
-                    <img data-u="thumb" src="/images/6.jpg" />
-                </div>
-                <div>
-                    <img data-u="image" src="/images/6.jpg" />
-                    <img data-u="thumb" src="/images/6.jpg" />
-                </div><a data-u="any" href="https://www.jssor.com" style="display:none">slider bootstrap</a>
+                {{/each}}
+                <a data-u="any" href="https://www.jssor.com" style="display:none">slider bootstrap</a>
             </div>
             <!-- Thumbnail Navigator -->
             <div data-u="thumbnavigator" class="jssort101"
