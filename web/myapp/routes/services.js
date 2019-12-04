@@ -16,7 +16,7 @@ router.get('/', function(req, res, next) {
           Bodycare.push(item);
         }
     });
-    res.render('services', { title: 'Spa Services',heading:"Services", services: Massages,Bodycare:Bodycare});
+    res.render('services', { title: 'Spa Services',heading:"Services",user:req.user, services: Massages,Bodycare:Bodycare});
   })
 });
 

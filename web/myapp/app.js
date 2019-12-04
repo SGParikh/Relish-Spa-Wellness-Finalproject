@@ -4,12 +4,13 @@ var path = require('path');
 var nodeMailer = require('nodemailer');
 var bodyParser = require('body-parser');
 var expressHBS=require('express-handlebars');
+var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require('mongoose');
 const { check, validationResult } = require('express-validator');
 var session = require('express-session');
-var cookieParser = require('cookie-parser');
-var flash=require('connect-flash')
+var passport=require('passport');
+var flash=require('connect-flash');
 
 
 
@@ -21,9 +22,18 @@ var galleryRouter = require('./routes/gallery');
 var servicesRouter = require('./routes/services');
 var bookingRouter = require('./routes/onlineBooking');
 var loginRouter = require('./routes/login');
+var registerRouter = require('./routes/register');
+var galleryMTRouter = require('./routes/galleryMT');
 
 var app = express();
-const url="mongodb://localhost:27017/spaDB"
+
+//passport config
+require('./config/passport')(passport);
+
+//Connect to Mongo
+//const url="mongodb://localhost:27017/spaDB"
+//const url=process.env.MONGO_CONNECT_URI
+const url="mongodb+srv://dbSweta:dbUserSweta@cluster0-rfpcb.mongodb.net/spaDB?retryWrites=true&w=majority"
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true },(error) => {
   if(!error)
   {
@@ -37,7 +47,6 @@ mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true },(error
 
 
 // view engine setup
-
 app.engine('.hbs',expressHBS({defaultLayout: 'Layout',extname: '.hbs'}))
 //app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', '.hbs');
@@ -51,16 +60,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 // initialize express-session to allow us track the logged-in user across sessions.
 app.use(session({
-  key: 'user_id',
   secret: 'uiid',
-  resave: false,
-  saveUninitialized: false,
-  cookie: {
-      expires: 600000
-  }
+  resave: true,
+  saveUninitialized: true
 }));
+
+//Passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Global vars
+app.use((req,res,next)=>{
+  res.locals.success_msg=req.flash('success_msg');
+  res.locals.error_msg=req.flash('error_msg');
+  res.locals.error=req.flash('error');
+  next();
+});
 
 //router path deside
 app.use('/', indexRouter);
@@ -70,16 +88,9 @@ app.use('/gallery', galleryRouter);
 app.use('/services', servicesRouter);
 app.use('/onlineBooking', bookingRouter);
 app.use('/login', loginRouter);
+app.use('/register', registerRouter);
+app.use('/galleryMT', galleryMTRouter);
 
-
-// This middleware will check if user's cookie is still saved in browser and user is not set, then automatically log the user out.
-// This usually happens when you stop your express server after login, your cookie still remains saved in the browser.
-app.use((req, res, next) => {
-  if (req.cookies.user_id && !req.session.user) {
-      res.clearCookie('user_id');        
-  }
-  next();
-});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

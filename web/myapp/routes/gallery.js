@@ -10,7 +10,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false });
 router.get('/',function(req, res) {
   Gallery.find({},(err,galleries)=>{
     console.log(galleries);
-    res.render('gallery', { title: 'Gallery',heading:"Gallery", Galleries: galleries});
+    res.render('gallery', { title: 'Gallery',heading:"Gallery", Galleries: galleries,user:req.user});
   })
 })
 
