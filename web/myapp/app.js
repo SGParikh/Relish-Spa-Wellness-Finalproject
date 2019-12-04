@@ -31,9 +31,7 @@ var app = express();
 require('./config/passport')(passport);
 
 //Connect to Mongo
-//const url="mongodb://localhost:27017/spaDB"
-//const url=process.env.MONGO_CONNECT_URI
-const url="mongodb+srv://dbSweta:dbUserSweta@cluster0-rfpcb.mongodb.net/spaDB?retryWrites=true&w=majority"
+const url=process.env.MONGO_CONNECT_URI
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true },(error) => {
   if(!error)
   {
